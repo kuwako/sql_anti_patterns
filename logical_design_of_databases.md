@@ -220,3 +220,17 @@ HibernateなどのORMフレームワークを用いる場合、このアンチ�
 - 水平パーティショニング(シャーディング)の使用
 - 垂直パーティショニングの使用
 - 従属テーブルの導入
+- MENTORの原則に従う
+    - Measure
+        - スロークエリなどを見て遅いクエリを特定しよう
+    - Explain
+        - explainコマンドで実行計画を確認しよう
+    - Nominate
+        - Sequential Scanをしている箇所をみつけよう
+    - Test
+    - Optimise
+        - 設定を確認してキャッシュメモリの量を調整しよう
+    - Rebuild
+        - vacuum, analyzeでインデックスをメンテナンスしよう
+        
+   
