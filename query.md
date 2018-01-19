@@ -128,3 +128,34 @@ LIKE句や正規表現による検索  
 - CASE式とSUM関数を組み合わせる
 - SQLを用いたSQLの自動的な記述
 
+## 18章: インプリジットカラム(暗黙の列)
+ワイルドカードを使うと思わぬミスをうむ
+
+### 目的: タイプ数を減らす
+確かに短くて便利だ
+- ``` SELECT bug_id, date_reported, summary, description, resolution, reported_by, assigned_to, verified_by, status, priority, hours FROM Bugs; ```
+- ``` SELECT * FROM Bugs; ```
+
+### アンチパターン: ショートカットの罠に陥る
+- リファクタリングにおける問題
+    - カラムを追加、削除するとinsert文が通らなくなる
+- 隠れた代償
+    - 必要でないカラムを取得することはパフォーマンスに大きな影響をもたらす
+- 求められなければ得られない
+
+### アンチパターンを用いても良い場合
+- 検証中に試しに書いている場合
+
+### 解決策: 列名を明示的に指定する
+- 誤りの防止
+- それは多分、必要ない(YAGNI: You Ain't Gonna Need It)
+- ワイルドカードを使えない局面はいずれ訪れる
+
+
+
+
+
+
+
+
+
